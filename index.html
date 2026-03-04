@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hithub Index — Japonês Falado</title>
+  <meta name="description" content="Índice completo de japonês falado com vocabulário essencial, kanji, leitura, tradução PT-BR, estruturas realmente faladas e pesquisa avançada." />
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: #12161b;
+      --panel-2: #171c22;
+      --soft: #1e252d;
+      --line: #2a313a;
+      --text: #eef2f6;
+      --muted: #9eabb8;
+      --accent: #7dd3fc;
+      --accent-2: #a78bfa;
+      --green: #86efac;
+      --yellow: #fde68a;
+      --red: #fca5a5;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: linear-gradient(180deg, #0b0d10 0%, #0d1117 100%); color: var(--text); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body { min-height: 100vh; }
+    button, input, select { font: inherit; }
+
+    .app {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(125,211,252,.10), rgba(167,139,250,.08));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 16px 0 12px;
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -.03em;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 980px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .stats {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 16px;
+    }
+
+    .stat .num {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+
+    .stat .lab {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .layout {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 340px minmax(0,1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .sidebar, .content {
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 18px;
+      padding: 18px;
+    }
+
+    .content {
+      padding: 18px;
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .tab {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 16px;
+      padding: 12px 14px;
+      cursor: pointer;
+      text-align: left;
+      transition: .18s ease;
+    }
+
+    .tab:hover { border-color: #3b4652; transform: translateY(-1px); }
+    .tab.active {
+      background: linear-gradient(135deg, rgba(125,211,252,.18), rgba(167,139,250,.14));
+      border-color: rgba(125,211,252,.55);
+    }
+
+    .tab .t1 { display: block; font-weight: 700; }
+    .tab .t2 { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
+
+    .field { margin-bottom: 14px; }
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 700;
+    }
+
+    .input, .select {
+      width: 100%;
+      background: var(--panel);
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 13px 14px;
+      outline: none;
+      transition: .18s ease;
+    }
+
+    .input:focus, .select:focus { border-color: rgba(125,211,252,.65); box-shadow: 0 0 0 4px rgba(125,211,252,.10); }
+
+    .switches { display: grid; gap: 10px; }
+    .switch {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+    }
+    .switch small { color: var(--muted); display: block; margin-top: 4px; }
+
+    .switch input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #7dd3fc;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: .18s ease;
+    }
+
+    .chip:hover { border-color: #3b4652; }
+    .chip.active {
+      background: rgba(125,211,252,.16);
+      border-color: rgba(125,211,252,.55);
+      color: #dff6ff;
+    }
+
+    .action-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: .18s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); border-color: #3b4652; }
+    .btn.primary {
+      background: linear-gradient(135deg, rgba(125,211,252,.22), rgba(167,139,250,.16));
+      border-color: rgba(125,211,252,.55);
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .result-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
+      padding: 16px;
+      transition: .18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: #3b4652;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .jp {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.03em;
+    }
+
+    .reading {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .pt {
+      margin-top: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #f6fbff;
+    }
+
+    .meta {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+    }
+
+    .rank { color: var(--accent); }
+    .common { color: var(--green); }
+
+    .list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .structure {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
+    }
+
+    .structure h3 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: -.03em;
+    }
+
+    .structure .meaning {
+      margin-top: 8px;
+      font-size: 15px;
+      color: #edf9ff;
+      font-weight: 600;
+    }
+
+    .box {
+      margin-top: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 14px;
+    }
+
+    .box h4 {
+      margin: 0 0 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--muted);
+    }
+
+    .box p, .box div {
+      margin: 0;
+      line-height: 1.8;
+      color: #e6edf5;
+      font-size: 14px;
+    }
+
+    .example-jp {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .empty {
+      border: 1px dashed var(--line);
+      border-radius: 24px;
+      padding: 30px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 10px;
+    }
+
+    .cat-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      padding: 14px;
+    }
+
+    .cat-card .name { font-weight: 700; }
+    .cat-card .count { margin-top: 6px; color: var(--muted); font-size: 13px; }
+
+    .mini-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .mini-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px dashed rgba(255,255,255,.06);
+      padding-bottom: 8px;
+    }
+
+    .mini-item:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    @media (max-width: 1180px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .tabs { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 740px) {
+      .app { padding: 14px; }
+      .hero { padding: 20px; border-radius: 22px; }
+      .content, .sidebar { padding: 14px; border-radius: 20px; }
+      .grid, .category-grid { grid-template-columns: 1fr; }
+      .stats, .tabs, .action-row { grid-template-columns: 1fr; }
+      .jp { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <section class="hero">
+      <div class="eyebrow">Hithub Index • Japonês falado</div>
+      <h1>Vocabulário que realmente aparece na fala</h1>
+      <p>
+        Site completo em HTML único com <strong>vocabulário essencial</strong>, <strong>kanji quando a palavra costuma aparecer com kanji</strong>, <strong>leitura</strong>, <strong>tradução PT-BR</strong>, <strong>estruturas realmente faladas</strong>, exemplos de uso e uma <strong>pesquisa avançada funcional</strong>. Sem pitch accent, como você pediu.
+      </p>
+      <div class="stats">
+        <div class="stat"><div class="num" id="statVocab">0</div><div class="lab">vocábulos</div></div>
+        <div class="stat"><div class="num" id="statStructures">0</div><div class="lab">estruturas</div></div>
+        <div class="stat"><div class="num" id="statResults">0</div><div class="lab">resultados visíveis</div></div>
+        <div class="stat"><div class="num" id="statCategories">0</div><div class="lab">categorias</div></div>
+      </div>
+    </section>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="section-title">Pesquisa avançada</div>
+
+        <div class="field">
+          <label for="q">Busca principal</label>
+          <input id="q" class="input" type="text" placeholder="kanji, leitura, pt-br, categoria, exemplo..." />
+        </div>
+
+        <div class="field">
+          <label for="mode">Modo de busca</label>
+          <select id="mode" class="select">
+            <option value="contains">Contém qualquer termo</option>
+            <option value="starts">Começa com</option>
+            <option value="exact">Correspondência exata</option>
+            <option value="all">Todos os termos ao mesmo tempo</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="categoryFilter">Categoria</label>
+          <select id="categoryFilter" class="select"></select>
+        </div>
+
+        <div class="field">
+          <label for="sortBy">Ordenar por</label>
+          <select id="sortBy" class="select">
+            <option value="rank">Prioridade / frequência</option>
+            <option value="jp">Japonês</option>
+            <option value="pt">Português</option>
+            <option value="category">Categoria</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Filtros úteis</label>
+          <div class="switches">
+            <div class="switch">
+              <div>
+                <strong>Somente palavras muito faladas</strong>
+                <small>núcleo mais forte da fala cotidiana</small>
+              </div>
+              <input id="onlyCore" type="checkbox" />
+            </div>
+            <div class="switch">
+              <div>
+                <strong>Somente itens com kanji</strong>
+                <small>remove itens só em kana/katakana</small>
+              </div>
+              <input id="onlyKanji" type="checkbox" />
+            </div>
+            <div class="switch">
+              <div>
+                <strong>Buscar também em estruturas</strong>
+                <small>usa a busca principal nas estruturas faladas</small>
+              </div>
+              <input id="searchStructures" type="checkbox" checked />
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Atalhos de categoria</label>
+          <div class="chips" id="chips"></div>
+        </div>
+
+        <div class="action-row">
+          <button class="btn primary" id="clearBtn">Limpar filtros</button>
+          <button class="btn" id="showCoreBtn">Ver núcleo vital</button>
+        </div>
+
+        <div class="footer-note">
+          A busca funciona por <strong>kanji</strong>, <strong>leitura</strong>, <strong>português</strong>, <strong>categoria</strong> e, nas estruturas, por <strong>padrão</strong>, <strong>como usar</strong>, <strong>exemplo</strong> e <strong>tradução</strong>.
+        </div>
+      </aside>
+
+      <main class="content">
+        <div class="tabs">
+          <button class="tab active" data-tab="vocab">
+            <span class="t1">Vocabulário</span>
+            <span class="t2">palavras essenciais da fala</span>
+          </button>
+          <button class="tab" data-tab="structures">
+            <span class="t1">Estruturas</span>
+            <span class="t2">como usar na fala</span>
+          </button>
+          <button class="tab" data-tab="categories">
+            <span class="t1">Categorias</span>
+            <span class="t2">visão geral por bloco</span>
+          </button>
+          <button class="tab" data-tab="study">
+            <span class="t1">Estudo rápido</span>
+            <span class="t2">núcleo vital para memorizar</span>
+          </button>
+        </div>
+
+        <section id="panel-vocab" class="panel">
+          <div class="toolbar">
+            <div class="result-meta">
+              <span class="badge">Itens visíveis: <strong id="vocabCount">0</strong></span>
+              <span class="badge">Categoria: <strong id="activeCategory">Todas</strong></span>
+              <span class="badge">Ordenação: <strong id="activeSort">Prioridade / frequência</strong></span>
+            </div>
+          </div>
+          <div class="grid" id="vocabGrid"></div>
+          <div class="empty" id="vocabEmpty" hidden>Nenhum vocabulário encontrado com os filtros atuais.</div>
+        </section>
+
+        <section id="panel-structures" class="panel" hidden>
+          <div class="toolbar">
+            <div class="result-meta">
+              <span class="badge">Estruturas visíveis: <strong id="structureCount">0</strong></span>
+              <span class="badge">Busca avançada aplicada</span>
+            </div>
+          </div>
+          <div class="list" id="structureList"></div>
+          <div class="empty" id="structureEmpty" hidden>Nenhuma estrutura encontrada com os filtros atuais.</div>
+        </section>
+
+        <section id="panel-categories" class="panel" hidden>
+          <div class="section-title">Mapa por categoria</div>
+          <div class="category-grid" id="categoryGrid"></div>
+        </section>
+
+        <section id="panel-study" class="panel" hidden>
+          <div class="section-title">Núcleo vital para estudo</div>
+          <div class="box">
+            <h4>Estruturas mais vitais</h4>
+            <div id="studyStructures"></div>
+          </div>
+          <div class="box">
+            <h4>Vocabulário de prioridade máxima</h4>
+            <div id="studyVocab"></div>
+          </div>
+          <div class="box">
+            <h4>Como estudar</h4>
+            <p>
+              1. Pegue primeiro o <strong>vocabulário do núcleo</strong>.<br>
+              2. Cole cada palavra com uma <strong>estrutura falada</strong>.<br>
+              3. Monte perguntas e respostas curtas como se estivesse numa conversa real.<br>
+              4. Priorize verbos, pronomes, tempo, conectores e rotina diária.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const vocab = [
+      { jp: "私", reading: "わたし", pt: "eu", category: "Básico", rank: 1, core: true, hasKanji: true },
+      { jp: "僕", reading: "ぼく", pt: "eu (masculino)", category: "Básico", rank: 2, core: true, hasKanji: true },
+      { jp: "俺", reading: "おれ", pt: "eu (masculino informal)", category: "Básico", rank: 3, core: true, hasKanji: true },
+      { jp: "自分", reading: "じぶん", pt: "eu / si mesmo", category: "Básico", rank: 4, core: true, hasKanji: true },
+      { jp: "あなた", reading: "あなた", pt: "você", category: "Básico", rank: 5, core: true, hasKanji: false },
+      { jp: "君", reading: "きみ", pt: "você", category: "Básico", rank: 6, core: true, hasKanji: true },
+      { jp: "みんな", reading: "みんな", pt: "todo mundo", category: "Básico", rank: 7, core: true, hasKanji: false },
+      { jp: "皆", reading: "みな", pt: "todos", category: "Básico", rank: 8, core: false, hasKanji: true },
+      { jp: "誰", reading: "だれ", pt: "quem", category: "Básico", rank: 9, core: true, hasKanji: true },
+      { jp: "何", reading: "なに", pt: "o que", category: "Básico", rank: 10, core: true, hasKanji: true },
+      { jp: "何か", reading: "なにか", pt: "algo", category: "Básico", rank: 11, core: true, hasKanji: true },
+      { jp: "何も", reading: "なにも", pt: "nada", category: "Básico", rank: 12, core: true, hasKanji: true },
+      { jp: "どこ", reading: "どこ", pt: "onde", category: "Básico", rank: 13, core: true, hasKanji: false },
+      { jp: "ここ", reading: "ここ", pt: "aqui", category: "Básico", rank: 14, core: true, hasKanji: false },
+      { jp: "そこ", reading: "そこ", pt: "aí", category: "Básico", rank: 15, core: true, hasKanji: false },
+      { jp: "あそこ", reading: "あそこ", pt: "ali", category: "Básico", rank: 16, core: true, hasKanji: false },
+      { jp: "これ", reading: "これ", pt: "isto", category: "Básico", rank: 17, core: true, hasKanji: false },
+      { jp: "それ", reading: "それ", pt: "isso", category: "Básico", rank: 18, core: true, hasKanji: false },
+      { jp: "あれ", reading: "あれ", pt: "aquilo", category: "Básico", rank: 19, core: true, hasKanji: false },
+      { jp: "この", reading: "この", pt: "este", category: "Básico", rank: 20, core: true, hasKanji: false },
+      { jp: "その", reading: "その", pt: "esse", category: "Básico", rank: 21, core: true, hasKanji: false },
+      { jp: "あの", reading: "あの", pt: "aquele", category: "Básico", rank: 22, core: true, hasKanji: false },
+      { jp: "どれ", reading: "どれ", pt: "qual", category: "Básico", rank: 23, core: true, hasKanji: false },
+      { jp: "どの", reading: "どの", pt: "qual", category: "Básico", rank: 24, core: true, hasKanji: false },
+      { jp: "いつ", reading: "いつ", pt: "quando", category: "Básico", rank: 25, core: true, hasKanji: false },
+      { jp: "今", reading: "いま", pt: "agora", category: "Tempo", rank: 26, core: true, hasKanji: true },
+      { jp: "今日", reading: "きょう", pt: "hoje", category: "Tempo", rank: 27, core: true, hasKanji: true },
+      { jp: "昨日", reading: "きのう", pt: "ontem", category: "Tempo", rank: 28, core: true, hasKanji: true },
+      { jp: "明日", reading: "あした", pt: "amanhã", category: "Tempo", rank: 29, core: true, hasKanji: true },
+      { jp: "もう", reading: "もう", pt: "já", category: "Básico", rank: 30, core: true, hasKanji: false },
+      { jp: "まだ", reading: "まだ", pt: "ainda", category: "Básico", rank: 31, core: true, hasKanji: false },
+      { jp: "また", reading: "また", pt: "de novo", category: "Básico", rank: 32, core: true, hasKanji: false },
+      { jp: "さっき", reading: "さっき", pt: "agora há pouco", category: "Tempo", rank: 33, core: true, hasKanji: false },
+      { jp: "あとで", reading: "あとで", pt: "depois", category: "Tempo", rank: 34, core: true, hasKanji: false },
+      { jp: "一緒", reading: "いっしょ", pt: "junto", category: "Básico", rank: 35, core: true, hasKanji: true },
+      { jp: "本当", reading: "ほんとう", pt: "verdade", category: "Básico", rank: 36, core: true, hasKanji: true },
+      { jp: "嘘", reading: "うそ", pt: "mentira", category: "Básico", rank: 37, core: false, hasKanji: true },
+      { jp: "理由", reading: "りゆう", pt: "motivo", category: "Básico", rank: 38, core: false, hasKanji: true },
+      { jp: "たぶん", reading: "たぶん", pt: "talvez", category: "Básico", rank: 39, core: true, hasKanji: false },
+      { jp: "もちろん", reading: "もちろん", pt: "claro", category: "Básico", rank: 40, core: true, hasKanji: false },
+      { jp: "やっぱり", reading: "やっぱり", pt: "como eu pensei / afinal", category: "Básico", rank: 41, core: true, hasKanji: false },
+      { jp: "例えば", reading: "たとえば", pt: "por exemplo", category: "Básico", rank: 42, core: false, hasKanji: true },
+      { jp: "でも", reading: "でも", pt: "mas", category: "Básico", rank: 43, core: true, hasKanji: false },
+      { jp: "けど", reading: "けど", pt: "mas", category: "Básico", rank: 44, core: true, hasKanji: false },
+      { jp: "だから", reading: "だから", pt: "por isso", category: "Básico", rank: 45, core: true, hasKanji: false },
+      { jp: "じゃあ", reading: "じゃあ", pt: "então", category: "Básico", rank: 46, core: true, hasKanji: false },
+      { jp: "なら", reading: "なら", pt: "então / nesse caso", category: "Básico", rank: 47, core: true, hasKanji: false },
+      { jp: "もし", reading: "もし", pt: "se", category: "Básico", rank: 48, core: true, hasKanji: false },
+      { jp: "ちょっと", reading: "ちょっと", pt: "um pouco", category: "Básico", rank: 49, core: true, hasKanji: false },
+      { jp: "ちゃんと", reading: "ちゃんと", pt: "direito / corretamente", category: "Básico", rank: 50, core: true, hasKanji: false },
+      { jp: "本当に", reading: "ほんとうに", pt: "realmente", category: "Básico", rank: 51, core: true, hasKanji: true },
+      { jp: "ある", reading: "ある", pt: "haver / existir (coisa)", category: "Verbo", rank: 52, core: true, hasKanji: false },
+      { jp: "いる", reading: "いる", pt: "haver / existir (ser vivo)", category: "Verbo", rank: 53, core: true, hasKanji: false },
+      { jp: "する", reading: "する", pt: "fazer", category: "Verbo", rank: 54, core: true, hasKanji: false },
+      { jp: "やる", reading: "やる", pt: "fazer", category: "Verbo", rank: 55, core: true, hasKanji: false },
+      { jp: "なる", reading: "なる", pt: "virar / tornar-se", category: "Verbo", rank: 56, core: true, hasKanji: false },
+      { jp: "できる", reading: "できる", pt: "conseguir / ser possível", category: "Verbo", rank: 57, core: true, hasKanji: false },
+      { jp: "行く", reading: "いく", pt: "ir", category: "Verbo", rank: 58, core: true, hasKanji: true },
+      { jp: "来る", reading: "くる", pt: "vir", category: "Verbo", rank: 59, core: true, hasKanji: true },
+      { jp: "帰る", reading: "かえる", pt: "voltar para casa", category: "Verbo", rank: 60, core: true, hasKanji: true },
+      { jp: "出る", reading: "でる", pt: "sair", category: "Verbo", rank: 61, core: true, hasKanji: true },
+      { jp: "入る", reading: "はいる", pt: "entrar", category: "Verbo", rank: 62, core: true, hasKanji: true },
+      { jp: "食べる", reading: "たべる", pt: "comer", category: "Verbo", rank: 63, core: true, hasKanji: true },
+      { jp: "飲む", reading: "のむ", pt: "beber", category: "Verbo", rank: 64, core: true, hasKanji: true },
+      { jp: "作る", reading: "つくる", pt: "fazer / criar", category: "Verbo", rank: 65, core: true, hasKanji: true },
+      { jp: "使う", reading: "つかう", pt: "usar", category: "Verbo", rank: 66, core: true, hasKanji: true },
+      { jp: "買う", reading: "かう", pt: "comprar", category: "Verbo", rank: 67, core: true, hasKanji: true },
+      { jp: "持つ", reading: "もつ", pt: "segurar / ter", category: "Verbo", rank: 68, core: true, hasKanji: true },
+      { jp: "取る", reading: "とる", pt: "pegar", category: "Verbo", rank: 69, core: true, hasKanji: true },
+      { jp: "置く", reading: "おく", pt: "colocar", category: "Verbo", rank: 70, core: true, hasKanji: true },
+      { jp: "入れる", reading: "いれる", pt: "colocar dentro", category: "Verbo", rank: 71, core: true, hasKanji: true },
+      { jp: "出す", reading: "だす", pt: "tirar / pôr para fora", category: "Verbo", rank: 72, core: true, hasKanji: true },
+      { jp: "開ける", reading: "あける", pt: "abrir", category: "Verbo", rank: 73, core: true, hasKanji: true },
+      { jp: "閉める", reading: "しめる", pt: "fechar", category: "Verbo", rank: 74, core: true, hasKanji: true },
+      { jp: "始める", reading: "はじめる", pt: "começar", category: "Verbo", rank: 75, core: true, hasKanji: true },
+      { jp: "終わる", reading: "おわる", pt: "terminar", category: "Verbo", rank: 76, core: true, hasKanji: true },
+      { jp: "続ける", reading: "つづける", pt: "continuar", category: "Verbo", rank: 77, core: false, hasKanji: true },
+      { jp: "待つ", reading: "まつ", pt: "esperar", category: "Verbo", rank: 78, core: true, hasKanji: true },
+      { jp: "急ぐ", reading: "いそぐ", pt: "se apressar", category: "Verbo", rank: 79, core: false, hasKanji: true },
+      { jp: "会う", reading: "あう", pt: "encontrar", category: "Verbo", rank: 80, core: true, hasKanji: true },
+      { jp: "話す", reading: "はなす", pt: "falar", category: "Verbo", rank: 81, core: true, hasKanji: true },
+      { jp: "言う", reading: "いう", pt: "dizer", category: "Verbo", rank: 82, core: true, hasKanji: true },
+      { jp: "聞く", reading: "きく", pt: "ouvir / perguntar", category: "Verbo", rank: 83, core: true, hasKanji: true },
+      { jp: "見る", reading: "みる", pt: "ver", category: "Verbo", rank: 84, core: true, hasKanji: true },
+      { jp: "読む", reading: "よむ", pt: "ler", category: "Verbo", rank: 85, core: false, hasKanji: true },
+      { jp: "書く", reading: "かく", pt: "escrever", category: "Verbo", rank: 86, core: false, hasKanji: true },
+      { jp: "覚える", reading: "おぼえる", pt: "memorizar", category: "Verbo", rank: 87, core: false, hasKanji: true },
+      { jp: "忘れる", reading: "わすれる", pt: "esquecer", category: "Verbo", rank: 88, core: true, hasKanji: true },
+      { jp: "思う", reading: "おもう", pt: "achar / pensar", category: "Verbo", rank: 89, core: true, hasKanji: true },
+      { jp: "考える", reading: "かんがえる", pt: "pensar / refletir", category: "Verbo", rank: 90, core: false, hasKanji: true },
+      { jp: "知る", reading: "しる", pt: "saber / conhecer", category: "Verbo", rank: 91, core: true, hasKanji: true },
+      { jp: "分かる", reading: "わかる", pt: "entender", category: "Verbo", rank: 92, core: true, hasKanji: true },
+      { jp: "教える", reading: "おしえる", pt: "ensinar", category: "Verbo", rank: 93, core: false, hasKanji: true },
+      { jp: "勉強する", reading: "べんきょうする", pt: "estudar", category: "Estudo/Trabalho", rank: 94, core: true, hasKanji: true },
+      { jp: "働く", reading: "はたらく", pt: "trabalhar", category: "Estudo/Trabalho", rank: 95, core: true, hasKanji: true },
+      { jp: "手伝う", reading: "てつだう", pt: "ajudar", category: "Verbo", rank: 96, core: false, hasKanji: true },
+      { jp: "助ける", reading: "たすける", pt: "ajudar / socorrer", category: "Verbo", rank: 97, core: true, hasKanji: true },
+      { jp: "頼む", reading: "たのむ", pt: "pedir", category: "Verbo", rank: 98, core: true, hasKanji: true },
+      { jp: "借りる", reading: "かりる", pt: "pegar emprestado", category: "Verbo", rank: 99, core: false, hasKanji: true },
+      { jp: "貸す", reading: "かす", pt: "emprestar", category: "Verbo", rank: 100, core: false, hasKanji: true },
+      { jp: "返す", reading: "かえす", pt: "devolver", category: "Verbo", rank: 101, core: false, hasKanji: true },
+      { jp: "払う", reading: "はらう", pt: "pagar", category: "Verbo", rank: 102, core: true, hasKanji: true },
+      { jp: "選ぶ", reading: "えらぶ", pt: "escolher", category: "Verbo", rank: 103, core: false, hasKanji: true },
+      { jp: "決める", reading: "きめる", pt: "decidir", category: "Verbo", rank: 104, core: true, hasKanji: true },
+      { jp: "変える", reading: "かえる", pt: "mudar / trocar", category: "Verbo", rank: 105, core: true, hasKanji: true },
+      { jp: "変わる", reading: "かわる", pt: "mudar", category: "Verbo", rank: 106, core: true, hasKanji: true },
+      { jp: "直す", reading: "なおす", pt: "consertar / corrigir", category: "Verbo", rank: 107, core: false, hasKanji: true },
+      { jp: "洗う", reading: "あらう", pt: "lavar", category: "Verbo", rank: 108, core: false, hasKanji: true },
+      { jp: "片付ける", reading: "かたづける", pt: "arrumar", category: "Casa", rank: 109, core: false, hasKanji: true },
+      { jp: "掃除する", reading: "そうじする", pt: "limpar", category: "Casa", rank: 110, core: false, hasKanji: true },
+      { jp: "料理する", reading: "りょうりする", pt: "cozinhar", category: "Comida", rank: 111, core: false, hasKanji: true },
+      { jp: "着る", reading: "きる", pt: "vestir (parte de cima)", category: "Casa", rank: 112, core: false, hasKanji: true },
+      { jp: "履く", reading: "はく", pt: "vestir / calçar (parte de baixo)", category: "Casa", rank: 113, core: false, hasKanji: true },
+      { jp: "脱ぐ", reading: "ぬぐ", pt: "tirar a roupa", category: "Casa", rank: 114, core: false, hasKanji: true },
+      { jp: "乗る", reading: "のる", pt: "embarcar / subir", category: "Lugares", rank: 115, core: false, hasKanji: true },
+      { jp: "降りる", reading: "おりる", pt: "descer", category: "Lugares", rank: 116, core: false, hasKanji: true },
+      { jp: "曲がる", reading: "まがる", pt: "virar", category: "Lugares", rank: 117, core: false, hasKanji: true },
+      { jp: "押す", reading: "おす", pt: "empurrar / apertar", category: "Verbo", rank: 118, core: false, hasKanji: true },
+      { jp: "引く", reading: "ひく", pt: "puxar", category: "Verbo", rank: 119, core: false, hasKanji: true },
+      { jp: "撮る", reading: "とる", pt: "tirar foto / filmar", category: "Mídia/Tecnologia", rank: 120, core: false, hasKanji: true },
+      { jp: "いい", reading: "いい", pt: "bom", category: "Adjetivo", rank: 121, core: true, hasKanji: false },
+      { jp: "悪い", reading: "わるい", pt: "ruim", category: "Adjetivo", rank: 122, core: true, hasKanji: true },
+      { jp: "大きい", reading: "おおきい", pt: "grande", category: "Adjetivo", rank: 123, core: true, hasKanji: true },
+      { jp: "小さい", reading: "ちいさい", pt: "pequeno", category: "Adjetivo", rank: 124, core: true, hasKanji: true },
+      { jp: "多い", reading: "おおい", pt: "muito / muitos", category: "Adjetivo", rank: 125, core: false, hasKanji: true },
+      { jp: "少ない", reading: "すくない", pt: "pouco / poucos", category: "Adjetivo", rank: 126, core: false, hasKanji: true },
+      { jp: "高い", reading: "たかい", pt: "alto / caro", category: "Adjetivo", rank: 127, core: true, hasKanji: true },
+      { jp: "安い", reading: "やすい", pt: "barato", category: "Adjetivo", rank: 128, core: true, hasKanji: true },
+      { jp: "新しい", reading: "あたらしい", pt: "novo", category: "Adjetivo", rank: 129, core: true, hasKanji: true },
+      { jp: "古い", reading: "ふるい", pt: "velho / antigo", category: "Adjetivo", rank: 130, core: false, hasKanji: true },
+      { jp: "早い", reading: "はやい", pt: "cedo / rápido", category: "Adjetivo", rank: 131, core: true, hasKanji: true },
+      { jp: "遅い", reading: "おそい", pt: "tarde / lento", category: "Adjetivo", rank: 132, core: true, hasKanji: true },
+      { jp: "近い", reading: "ちかい", pt: "perto", category: "Adjetivo", rank: 133, core: true, hasKanji: true },
+      { jp: "遠い", reading: "とおい", pt: "longe", category: "Adjetivo", rank: 134, core: false, hasKanji: true },
+      { jp: "長い", reading: "ながい", pt: "longo", category: "Adjetivo", rank: 135, core: false, hasKanji: true },
+      { jp: "短い", reading: "みじかい", pt: "curto", category: "Adjetivo", rank: 136, core: false, hasKanji: true },
+      { jp: "暑い", reading: "あつい", pt: "quente (clima)", category: "Natureza/Clima", rank: 137, core: true, hasKanji: true },
+      { jp: "寒い", reading: "さむい", pt: "frio (clima)", category: "Natureza/Clima", rank: 138, core: true, hasKanji: true },
+      { jp: "熱い", reading: "あつい", pt: "quente (objeto)", category: "Adjetivo", rank: 139, core: false, hasKanji: true },
+      { jp: "冷たい", reading: "つめたい", pt: "gelado / frio ao toque", category: "Adjetivo", rank: 140, core: false, hasKanji: true },
+      { jp: "難しい", reading: "むずかしい", pt: "difícil", category: "Adjetivo", rank: 141, core: true, hasKanji: true },
+      { jp: "優しい", reading: "やさしい", pt: "gentil / fácil (depende do contexto)", category: "Adjetivo", rank: 142, core: true, hasKanji: true },
+      { jp: "嬉しい", reading: "うれしい", pt: "feliz", category: "Adjetivo", rank: 143, core: true, hasKanji: true },
+      { jp: "楽しい", reading: "たのしい", pt: "divertido", category: "Adjetivo", rank: 144, core: true, hasKanji: true },
+      { jp: "悲しい", reading: "かなしい", pt: "triste", category: "Adjetivo", rank: 145, core: true, hasKanji: true },
+      { jp: "怖い", reading: "こわい", pt: "assustador / medo", category: "Adjetivo", rank: 146, core: true, hasKanji: true },
+      { jp: "痛い", reading: "いたい", pt: "dolorido", category: "Corpo", rank: 147, core: true, hasKanji: true },
+      { jp: "眠い", reading: "ねむい", pt: "com sono", category: "Corpo", rank: 148, core: true, hasKanji: true },
+      { jp: "忙しい", reading: "いそがしい", pt: "ocupado", category: "Estudo/Trabalho", rank: 149, core: true, hasKanji: true },
+      { jp: "欲しい", reading: "ほしい", pt: "querer", category: "Adjetivo", rank: 150, core: true, hasKanji: true },
+      { jp: "うまい", reading: "うまい", pt: "gostoso / habilidoso", category: "Adjetivo", rank: 151, core: true, hasKanji: false },
+      { jp: "おいしい", reading: "おいしい", pt: "gostoso", category: "Comida", rank: 152, core: true, hasKanji: false },
+      { jp: "まずい", reading: "まずい", pt: "ruim de gosto", category: "Comida", rank: 153, core: false, hasKanji: false },
+      { jp: "甘い", reading: "あまい", pt: "doce", category: "Comida", rank: 154, core: false, hasKanji: true },
+      { jp: "辛い", reading: "からい", pt: "apimentado", category: "Comida", rank: 155, core: false, hasKanji: true },
+      { jp: "きれい", reading: "きれい", pt: "bonito / limpo", category: "Adjetivo", rank: 156, core: true, hasKanji: false },
+      { jp: "静か", reading: "しずか", pt: "silencioso", category: "Adjetivo", rank: 157, core: false, hasKanji: true },
+      { jp: "有名", reading: "ゆうめい", pt: "famoso", category: "Adjetivo", rank: 158, core: false, hasKanji: true },
+      { jp: "大事", reading: "だいじ", pt: "importante", category: "Adjetivo", rank: 159, core: true, hasKanji: true },
+      { jp: "大丈夫", reading: "だいじょうぶ", pt: "tudo bem / sem problema", category: "Adjetivo", rank: 160, core: true, hasKanji: true },
+      { jp: "必要", reading: "ひつよう", pt: "necessário", category: "Adjetivo", rank: 161, core: false, hasKanji: true },
+      { jp: "無理", reading: "むり", pt: "impossível / sem condição", category: "Adjetivo", rank: 162, core: true, hasKanji: true },
+      { jp: "簡単", reading: "かんたん", pt: "simples", category: "Adjetivo", rank: 163, core: false, hasKanji: true },
+      { jp: "便利", reading: "べんり", pt: "prático", category: "Adjetivo", rank: 164, core: false, hasKanji: true },
+      { jp: "変", reading: "へん", pt: "estranho", category: "Adjetivo", rank: 165, core: true, hasKanji: true },
+      { jp: "同じ", reading: "おなじ", pt: "igual", category: "Adjetivo", rank: 166, core: true, hasKanji: true },
+      { jp: "暇", reading: "ひま", pt: "livre / sem nada para fazer", category: "Adjetivo", rank: 167, core: true, hasKanji: true },
+      { jp: "元気", reading: "げんき", pt: "bem / animado", category: "Corpo", rank: 168, core: true, hasKanji: true },
+      { jp: "平気", reading: "へいき", pt: "de boa / tranquilo", category: "Adjetivo", rank: 169, core: false, hasKanji: true },
+      { jp: "好き", reading: "すき", pt: "gostar", category: "Adjetivo", rank: 170, core: true, hasKanji: true },
+      { jp: "嫌い", reading: "きらい", pt: "não gostar", category: "Adjetivo", rank: 171, core: true, hasKanji: true },
+      { jp: "上", reading: "うえ", pt: "em cima", category: "Básico", rank: 172, core: true, hasKanji: true },
+      { jp: "下", reading: "した", pt: "embaixo", category: "Básico", rank: 173, core: true, hasKanji: true },
+      { jp: "前", reading: "まえ", pt: "frente / antes", category: "Básico", rank: 174, core: true, hasKanji: true },
+      { jp: "後ろ", reading: "うしろ", pt: "atrás", category: "Básico", rank: 175, core: true, hasKanji: true },
+      { jp: "中", reading: "なか", pt: "dentro", category: "Básico", rank: 176, core: true, hasKanji: true },
+      { jp: "外", reading: "そと", pt: "fora", category: "Básico", rank: 177, core: true, hasKanji: true },
+      { jp: "左", reading: "ひだり", pt: "esquerda", category: "Básico", rank: 178, core: true, hasKanji: true },
+      { jp: "右", reading: "みぎ", pt: "direita", category: "Básico", rank: 179, core: true, hasKanji: true },
+      { jp: "すぐ", reading: "すぐ", pt: "logo", category: "Básico", rank: 180, core: true, hasKanji: false },
+      { jp: "ゆっくり", reading: "ゆっくり", pt: "devagar", category: "Básico", rank: 181, core: true, hasKanji: false },
+      { jp: "もっと", reading: "もっと", pt: "mais", category: "Básico", rank: 182, core: true, hasKanji: false },
+      { jp: "一番", reading: "いちばん", pt: "o mais", category: "Básico", rank: 183, core: true, hasKanji: true },
+      { jp: "全然", reading: "ぜんぜん", pt: "nada / nada mesmo", category: "Básico", rank: 184, core: true, hasKanji: true },
+      { jp: "結構", reading: "けっこう", pt: "bem / bastante", category: "Básico", rank: 185, core: true, hasKanji: true },
+      { jp: "めっちゃ", reading: "めっちゃ", pt: "muito", category: "Básico", rank: 186, core: true, hasKanji: false },
+      { jp: "どう", reading: "どう", pt: "como", category: "Básico", rank: 187, core: true, hasKanji: false },
+      { jp: "普通", reading: "ふつう", pt: "normal", category: "Básico", rank: 188, core: false, hasKanji: true },
+      { jp: "人", reading: "ひと", pt: "pessoa", category: "Pessoas", rank: 189, core: true, hasKanji: true },
+      { jp: "男", reading: "おとこ", pt: "homem", category: "Pessoas", rank: 190, core: true, hasKanji: true },
+      { jp: "女", reading: "おんな", pt: "mulher", category: "Pessoas", rank: 191, core: true, hasKanji: true },
+      { jp: "子供", reading: "こども", pt: "criança", category: "Pessoas", rank: 192, core: true, hasKanji: true },
+      { jp: "大人", reading: "おとな", pt: "adulto", category: "Pessoas", rank: 193, core: true, hasKanji: true },
+      { jp: "友達", reading: "ともだち", pt: "amigo", category: "Pessoas", rank: 194, core: true, hasKanji: true },
+      { jp: "親", reading: "おや", pt: "pais", category: "Pessoas", rank: 195, core: true, hasKanji: true },
+      { jp: "母", reading: "はは", pt: "mãe", category: "Pessoas", rank: 196, core: false, hasKanji: true },
+      { jp: "お母さん", reading: "おかあさん", pt: "mãe", category: "Pessoas", rank: 197, core: true, hasKanji: true },
+      { jp: "父", reading: "ちち", pt: "pai", category: "Pessoas", rank: 198, core: false, hasKanji: true },
+      { jp: "お父さん", reading: "おとうさん", pt: "pai", category: "Pessoas", rank: 199, core: true, hasKanji: true },
+      { jp: "兄", reading: "あに", pt: "irmão mais velho", category: "Pessoas", rank: 200, core: false, hasKanji: true },
+      { jp: "弟", reading: "おとうと", pt: "irmão mais novo", category: "Pessoas", rank: 201, core: false, hasKanji: true },
+      { jp: "姉", reading: "あね", pt: "irmã mais velha", category: "Pessoas", rank: 202, core: false, hasKanji: true },
+      { jp: "妹", reading: "いもうと", pt: "irmã mais nova", category: "Pessoas", rank: 203, core: false, hasKanji: true },
+      { jp: "家族", reading: "かぞく", pt: "família", category: "Pessoas", rank: 204, core: true, hasKanji: true },
+      { jp: "彼氏", reading: "かれし", pt: "namorado", category: "Pessoas", rank: 205, core: false, hasKanji: true },
+      { jp: "彼女", reading: "かのじょ", pt: "namorada", category: "Pessoas", rank: 206, core: false, hasKanji: true },
+      { jp: "先生", reading: "せんせい", pt: "professor", category: "Pessoas", rank: 207, core: true, hasKanji: true },
+      { jp: "学生", reading: "がくせい", pt: "estudante", category: "Pessoas", rank: 208, core: true, hasKanji: true },
+      { jp: "先輩", reading: "せんぱい", pt: "veterano / senpai", category: "Pessoas", rank: 209, core: false, hasKanji: true },
+      { jp: "上司", reading: "じょうし", pt: "chefe", category: "Pessoas", rank: 210, core: false, hasKanji: true },
+      { jp: "同僚", reading: "どうりょう", pt: "colega de trabalho", category: "Pessoas", rank: 211, core: false, hasKanji: true },
+      { jp: "客", reading: "きゃく", pt: "cliente", category: "Pessoas", rank: 212, core: false, hasKanji: true },
+      { jp: "店員", reading: "てんいん", pt: "atendente", category: "Pessoas", rank: 213, core: false, hasKanji: true },
+      { jp: "医者", reading: "いしゃ", pt: "médico", category: "Pessoas", rank: 214, core: false, hasKanji: true },
+      { jp: "年", reading: "とし", pt: "ano / idade", category: "Tempo", rank: 215, core: false, hasKanji: true },
+      { jp: "月", reading: "つき", pt: "mês / lua", category: "Tempo", rank: 216, core: false, hasKanji: true },
+      { jp: "日", reading: "ひ", pt: "dia / sol", category: "Tempo", rank: 217, core: false, hasKanji: true },
+      { jp: "時間", reading: "じかん", pt: "tempo / hora", category: "Tempo", rank: 218, core: true, hasKanji: true },
+      { jp: "分", reading: "ふん", pt: "minuto", category: "Tempo", rank: 219, core: true, hasKanji: true },
+      { jp: "朝", reading: "あさ", pt: "manhã", category: "Tempo", rank: 220, core: true, hasKanji: true },
+      { jp: "昼", reading: "ひる", pt: "meio-dia / tarde", category: "Tempo", rank: 221, core: false, hasKanji: true },
+      { jp: "夜", reading: "よる", pt: "noite", category: "Tempo", rank: 222, core: true, hasKanji: true },
+      { jp: "今週", reading: "こんしゅう", pt: "esta semana", category: "Tempo", rank: 223, core: false, hasKanji: true },
+      { jp: "先週", reading: "せんしゅう", pt: "semana passada", category: "Tempo", rank: 224, core: false, hasKanji: true },
+      { jp: "来週", reading: "らいしゅう", pt: "semana que vem", category: "Tempo", rank: 225, core: false, hasKanji: true },
+      { jp: "今月", reading: "こんげつ", pt: "este mês", category: "Tempo", rank: 226, core: false, hasKanji: true },
+      { jp: "今年", reading: "ことし", pt: "este ano", category: "Tempo", rank: 227, core: false, hasKanji: true },
+      { jp: "毎日", reading: "まいにち", pt: "todo dia", category: "Tempo", rank: 228, core: true, hasKanji: true },
+      { jp: "週末", reading: "しゅうまつ", pt: "fim de semana", category: "Tempo", rank: 229, core: true, hasKanji: true },
+      { jp: "予定", reading: "よてい", pt: "plano / agenda", category: "Tempo", rank: 230, core: true, hasKanji: true },
+      { jp: "約束", reading: "やくそく", pt: "compromisso / promessa", category: "Tempo", rank: 231, core: false, hasKanji: true },
+      { jp: "最近", reading: "さいきん", pt: "recentemente", category: "Tempo", rank: 232, core: true, hasKanji: true },
+      { jp: "昔", reading: "むかし", pt: "antigamente", category: "Tempo", rank: 233, core: false, hasKanji: true },
+      { jp: "時", reading: "とき", pt: "quando / hora", category: "Tempo", rank: 234, core: true, hasKanji: true },
+      { jp: "たまに", reading: "たまに", pt: "às vezes", category: "Tempo", rank: 235, core: true, hasKanji: false },
+      { jp: "いつも", reading: "いつも", pt: "sempre", category: "Tempo", rank: 236, core: true, hasKanji: false },
+      { jp: "よく", reading: "よく", pt: "frequentemente / bem", category: "Tempo", rank: 237, core: true, hasKanji: false },
+      { jp: "家", reading: "いえ", pt: "casa", category: "Casa", rank: 238, core: true, hasKanji: true },
+      { jp: "部屋", reading: "へや", pt: "quarto / cômodo", category: "Casa", rank: 239, core: true, hasKanji: true },
+      { jp: "ドア", reading: "どあ", pt: "porta", category: "Casa", rank: 240, core: false, hasKanji: false },
+      { jp: "窓", reading: "まど", pt: "janela", category: "Casa", rank: 241, core: false, hasKanji: true },
+      { jp: "鍵", reading: "かぎ", pt: "chave", category: "Casa", rank: 242, core: true, hasKanji: true },
+      { jp: "机", reading: "つくえ", pt: "mesa", category: "Casa", rank: 243, core: false, hasKanji: true },
+      { jp: "椅子", reading: "いす", pt: "cadeira", category: "Casa", rank: 244, core: false, hasKanji: true },
+      { jp: "電気", reading: "でんき", pt: "eletricidade / luz", category: "Casa", rank: 245, core: true, hasKanji: true },
+      { jp: "冷蔵庫", reading: "れいぞうこ", pt: "geladeira", category: "Casa", rank: 246, core: false, hasKanji: true },
+      { jp: "電子レンジ", reading: "でんしれんじ", pt: "micro-ondas", category: "Casa", rank: 247, core: false, hasKanji: true },
+      { jp: "洗濯機", reading: "せんたくき", pt: "máquina de lavar", category: "Casa", rank: 248, core: false, hasKanji: true },
+      { jp: "エアコン", reading: "えあこん", pt: "ar-condicionado", category: "Casa", rank: 249, core: false, hasKanji: false },
+      { jp: "お風呂", reading: "おふろ", pt: "banho / banheiro", category: "Casa", rank: 250, core: true, hasKanji: true },
+      { jp: "シャワー", reading: "しゃわー", pt: "chuveiro", category: "Casa", rank: 251, core: true, hasKanji: false },
+      { jp: "トイレ", reading: "といれ", pt: "banheiro", category: "Casa", rank: 252, core: true, hasKanji: false },
+      { jp: "鏡", reading: "かがみ", pt: "espelho", category: "Casa", rank: 253, core: false, hasKanji: true },
+      { jp: "タオル", reading: "たおる", pt: "toalha", category: "Casa", rank: 254, core: false, hasKanji: false },
+      { jp: "服", reading: "ふく", pt: "roupa", category: "Casa", rank: 255, core: true, hasKanji: true },
+      { jp: "靴", reading: "くつ", pt: "sapato", category: "Casa", rank: 256, core: true, hasKanji: true },
+      { jp: "鞄", reading: "かばん", pt: "bolsa / mochila", category: "Casa", rank: 257, core: false, hasKanji: true },
+      { jp: "財布", reading: "さいふ", pt: "carteira", category: "Casa", rank: 258, core: true, hasKanji: true },
+      { jp: "傘", reading: "かさ", pt: "guarda-chuva", category: "Casa", rank: 259, core: false, hasKanji: true },
+      { jp: "時計", reading: "とけい", pt: "relógio", category: "Casa", rank: 260, core: false, hasKanji: true },
+      { jp: "眼鏡", reading: "めがね", pt: "óculos", category: "Casa", rank: 261, core: false, hasKanji: true },
+      { jp: "携帯", reading: "けいたい", pt: "celular", category: "Mídia/Tecnologia", rank: 262, core: true, hasKanji: true },
+      { jp: "充電器", reading: "じゅうでんき", pt: "carregador", category: "Mídia/Tecnologia", rank: 263, core: false, hasKanji: true },
+      { jp: "店", reading: "みせ", pt: "loja", category: "Lugares", rank: 264, core: true, hasKanji: true },
+      { jp: "会社", reading: "かいしゃ", pt: "empresa", category: "Lugares", rank: 265, core: true, hasKanji: true },
+      { jp: "学校", reading: "がっこう", pt: "escola", category: "Lugares", rank: 266, core: true, hasKanji: true },
+      { jp: "駅", reading: "えき", pt: "estação", category: "Lugares", rank: 267, core: true, hasKanji: true },
+      { jp: "電車", reading: "でんしゃ", pt: "trem", category: "Lugares", rank: 268, core: true, hasKanji: true },
+      { jp: "地下鉄", reading: "ちかてつ", pt: "metrô", category: "Lugares", rank: 269, core: false, hasKanji: true },
+      { jp: "バス", reading: "ばす", pt: "ônibus", category: "Lugares", rank: 270, core: true, hasKanji: false },
+      { jp: "車", reading: "くるま", pt: "carro", category: "Lugares", rank: 271, core: true, hasKanji: true },
+      { jp: "自転車", reading: "じてんしゃ", pt: "bicicleta", category: "Lugares", rank: 272, core: false, hasKanji: true },
+      { jp: "道", reading: "みち", pt: "caminho / rua", category: "Lugares", rank: 273, core: true, hasKanji: true },
+      { jp: "空港", reading: "くうこう", pt: "aeroporto", category: "Lugares", rank: 274, core: false, hasKanji: true },
+      { jp: "飛行機", reading: "ひこうき", pt: "avião", category: "Lugares", rank: 275, core: false, hasKanji: true },
+      { jp: "病院", reading: "びょういん", pt: "hospital", category: "Lugares", rank: 276, core: true, hasKanji: true },
+      { jp: "薬局", reading: "やっきょく", pt: "farmácia", category: "Lugares", rank: 277, core: false, hasKanji: true },
+      { jp: "公園", reading: "こうえん", pt: "parque", category: "Lugares", rank: 278, core: false, hasKanji: true },
+      { jp: "銀行", reading: "ぎんこう", pt: "banco", category: "Lugares", rank: 279, core: false, hasKanji: true },
+      { jp: "コンビニ", reading: "こんびに", pt: "loja de conveniência", category: "Lugares", rank: 280, core: true, hasKanji: false },
+      { jp: "スーパー", reading: "すーぱー", pt: "supermercado", category: "Lugares", rank: 281, core: true, hasKanji: false },
+      { jp: "レストラン", reading: "れすとらん", pt: "restaurante", category: "Lugares", rank: 282, core: false, hasKanji: false },
+      { jp: "席", reading: "せき", pt: "assento", category: "Lugares", rank: 283, core: false, hasKanji: true },
+      { jp: "場所", reading: "ばしょ", pt: "lugar", category: "Lugares", rank: 284, core: true, hasKanji: true },
+      { jp: "町", reading: "まち", pt: "cidade / bairro", category: "Lugares", rank: 285, core: false, hasKanji: true },
+      { jp: "国", reading: "くに", pt: "país", category: "Lugares", rank: 286, core: false, hasKanji: true },
+      { jp: "日本", reading: "にほん", pt: "Japão", category: "Lugares", rank: 287, core: false, hasKanji: true },
+      { jp: "世界", reading: "せかい", pt: "mundo", category: "Lugares", rank: 288, core: false, hasKanji: true },
+      { jp: "住所", reading: "じゅうしょ", pt: "endereço", category: "Lugares", rank: 289, core: false, hasKanji: true },
+      { jp: "番号", reading: "ばんごう", pt: "número", category: "Lugares", rank: 290, core: false, hasKanji: true },
+      { jp: "水", reading: "みず", pt: "água", category: "Comida", rank: 291, core: true, hasKanji: true },
+      { jp: "お湯", reading: "おゆ", pt: "água quente", category: "Comida", rank: 292, core: false, hasKanji: true },
+      { jp: "お茶", reading: "おちゃ", pt: "chá", category: "Comida", rank: 293, core: true, hasKanji: true },
+      { jp: "コーヒー", reading: "こーひー", pt: "café", category: "Comida", rank: 294, core: true, hasKanji: false },
+      { jp: "牛乳", reading: "ぎゅうにゅう", pt: "leite", category: "Comida", rank: 295, core: false, hasKanji: true },
+      { jp: "ジュース", reading: "じゅーす", pt: "suco", category: "Comida", rank: 296, core: false, hasKanji: false },
+      { jp: "酒", reading: "さけ", pt: "álcool / saquê", category: "Comida", rank: 297, core: false, hasKanji: true },
+      { jp: "ビール", reading: "びーる", pt: "cerveja", category: "Comida", rank: 298, core: false, hasKanji: false },
+      { jp: "ご飯", reading: "ごはん", pt: "arroz / refeição", category: "Comida", rank: 299, core: true, hasKanji: true },
+      { jp: "朝ご飯", reading: "あさごはん", pt: "café da manhã", category: "Comida", rank: 300, core: true, hasKanji: true },
+      { jp: "昼ご飯", reading: "ひるごはん", pt: "almoço", category: "Comida", rank: 301, core: true, hasKanji: true },
+      { jp: "晩ご飯", reading: "ばんごはん", pt: "jantar", category: "Comida", rank: 302, core: true, hasKanji: true },
+      { jp: "パン", reading: "ぱん", pt: "pão", category: "Comida", rank: 303, core: true, hasKanji: false },
+      { jp: "卵", reading: "たまご", pt: "ovo", category: "Comida", rank: 304, core: true, hasKanji: true },
+      { jp: "肉", reading: "にく", pt: "carne", category: "Comida", rank: 305, core: true, hasKanji: true },
+      { jp: "魚", reading: "さかな", pt: "peixe", category: "Comida", rank: 306, core: true, hasKanji: true },
+      { jp: "野菜", reading: "やさい", pt: "verdura / legume", category: "Comida", rank: 307, core: true, hasKanji: true },
+      { jp: "果物", reading: "くだもの", pt: "fruta", category: "Comida", rank: 308, core: false, hasKanji: true },
+      { jp: "ラーメン", reading: "らーめん", pt: "rámen", category: "Comida", rank: 309, core: true, hasKanji: false },
+      { jp: "寿司", reading: "すし", pt: "sushi", category: "Comida", rank: 310, core: false, hasKanji: true },
+      { jp: "味噌汁", reading: "みそしる", pt: "sopa de missô", category: "Comida", rank: 311, core: false, hasKanji: true },
+      { jp: "サラダ", reading: "さらだ", pt: "salada", category: "Comida", rank: 312, core: false, hasKanji: false },
+      { jp: "お菓子", reading: "おかし", pt: "doce / snack", category: "Comida", rank: 313, core: false, hasKanji: true },
+      { jp: "塩", reading: "しお", pt: "sal", category: "Comida", rank: 314, core: false, hasKanji: true },
+      { jp: "砂糖", reading: "さとう", pt: "açúcar", category: "Comida", rank: 315, core: false, hasKanji: true },
+      { jp: "醤油", reading: "しょうゆ", pt: "shoyu", category: "Comida", rank: 316, core: false, hasKanji: true },
+      { jp: "味", reading: "あじ", pt: "sabor", category: "Comida", rank: 317, core: false, hasKanji: true },
+      { jp: "お腹", reading: "おなか", pt: "barriga", category: "Corpo", rank: 318, core: true, hasKanji: true },
+      { jp: "喉", reading: "のど", pt: "garganta", category: "Corpo", rank: 319, core: false, hasKanji: true },
+      { jp: "注文", reading: "ちゅうもん", pt: "pedido", category: "Comida", rank: 320, core: false, hasKanji: true },
+      { jp: "会計", reading: "かいけい", pt: "conta / pagamento", category: "Comida", rank: 321, core: true, hasKanji: true },
+      { jp: "体", reading: "からだ", pt: "corpo", category: "Corpo", rank: 322, core: true, hasKanji: true },
+      { jp: "頭", reading: "あたま", pt: "cabeça", category: "Corpo", rank: 323, core: false, hasKanji: true },
+      { jp: "顔", reading: "かお", pt: "rosto", category: "Corpo", rank: 324, core: false, hasKanji: true },
+      { jp: "目", reading: "め", pt: "olho", category: "Corpo", rank: 325, core: true, hasKanji: true },
+      { jp: "耳", reading: "みみ", pt: "orelha", category: "Corpo", rank: 326, core: false, hasKanji: true },
+      { jp: "鼻", reading: "はな", pt: "nariz", category: "Corpo", rank: 327, core: false, hasKanji: true },
+      { jp: "口", reading: "くち", pt: "boca", category: "Corpo", rank: 328, core: false, hasKanji: true },
+      { jp: "首", reading: "くび", pt: "pescoço", category: "Corpo", rank: 329, core: false, hasKanji: true },
+      { jp: "肩", reading: "かた", pt: "ombro", category: "Corpo", rank: 330, core: false, hasKanji: true },
+      { jp: "手", reading: "て", pt: "mão", category: "Corpo", rank: 331, core: true, hasKanji: true },
+      { jp: "足", reading: "あし", pt: "perna / pé", category: "Corpo", rank: 332, core: true, hasKanji: true },
+      { jp: "心", reading: "こころ", pt: "coração / mente", category: "Corpo", rank: 333, core: false, hasKanji: true },
+      { jp: "気分", reading: "きぶん", pt: "humor / sensação", category: "Corpo", rank: 334, core: false, hasKanji: true },
+      { jp: "病気", reading: "びょうき", pt: "doença", category: "Corpo", rank: 335, core: true, hasKanji: true },
+      { jp: "熱", reading: "ねつ", pt: "febre", category: "Corpo", rank: 336, core: false, hasKanji: true },
+      { jp: "風邪", reading: "かぜ", pt: "resfriado", category: "Corpo", rank: 337, core: true, hasKanji: true },
+      { jp: "咳", reading: "せき", pt: "tosse", category: "Corpo", rank: 338, core: false, hasKanji: true },
+      { jp: "怪我", reading: "けが", pt: "machucado", category: "Corpo", rank: 339, core: false, hasKanji: true },
+      { jp: "薬", reading: "くすり", pt: "remédio", category: "Corpo", rank: 340, core: true, hasKanji: true },
+      { jp: "健康", reading: "けんこう", pt: "saúde", category: "Corpo", rank: 341, core: false, hasKanji: true },
+      { jp: "運動", reading: "うんどう", pt: "exercício", category: "Corpo", rank: 342, core: false, hasKanji: true },
+      { jp: "疲れ", reading: "つかれ", pt: "cansaço", category: "Corpo", rank: 343, core: false, hasKanji: true },
+      { jp: "緊張", reading: "きんちょう", pt: "tensão", category: "Corpo", rank: 344, core: false, hasKanji: true },
+      { jp: "安心", reading: "あんしん", pt: "alívio / tranquilidade", category: "Corpo", rank: 345, core: false, hasKanji: true },
+      { jp: "不安", reading: "ふあん", pt: "ansiedade", category: "Corpo", rank: 346, core: false, hasKanji: true },
+      { jp: "心配", reading: "しんぱい", pt: "preocupação", category: "Corpo", rank: 347, core: true, hasKanji: true },
+      { jp: "我慢", reading: "がまん", pt: "aguentar / segurar", category: "Corpo", rank: 348, core: false, hasKanji: true },
+      { jp: "声", reading: "こえ", pt: "voz", category: "Corpo", rank: 349, core: false, hasKanji: true },
+      { jp: "音", reading: "おと", pt: "som", category: "Corpo", rank: 350, core: false, hasKanji: true },
+      { jp: "仕事", reading: "しごと", pt: "trabalho", category: "Estudo/Trabalho", rank: 351, core: true, hasKanji: true },
+      { jp: "会議", reading: "かいぎ", pt: "reunião", category: "Estudo/Trabalho", rank: 352, core: false, hasKanji: true },
+      { jp: "連絡", reading: "れんらく", pt: "contato / aviso", category: "Estudo/Trabalho", rank: 353, core: true, hasKanji: true },
+      { jp: "報告", reading: "ほうこく", pt: "relatório / reportar", category: "Estudo/Trabalho", rank: 354, core: false, hasKanji: true },
+      { jp: "相談", reading: "そうだん", pt: "consulta / conversar sobre algo", category: "Estudo/Trabalho", rank: 355, core: true, hasKanji: true },
+      { jp: "確認", reading: "かくにん", pt: "confirmação", category: "Estudo/Trabalho", rank: 356, core: true, hasKanji: true },
+      { jp: "説明", reading: "せつめい", pt: "explicação", category: "Estudo/Trabalho", rank: 357, core: false, hasKanji: true },
+      { jp: "準備", reading: "じゅんび", pt: "preparo", category: "Estudo/Trabalho", rank: 358, core: true, hasKanji: true },
+      { jp: "練習", reading: "れんしゅう", pt: "prática", category: "Estudo/Trabalho", rank: 359, core: true, hasKanji: true },
+      { jp: "宿題", reading: "しゅくだい", pt: "lição de casa", category: "Estudo/Trabalho", rank: 360, core: false, hasKanji: true },
+      { jp: "授業", reading: "じゅぎょう", pt: "aula", category: "Estudo/Trabalho", rank: 361, core: false, hasKanji: true },
+      { jp: "試験", reading: "しけん", pt: "prova", category: "Estudo/Trabalho", rank: 362, core: false, hasKanji: true },
+      { jp: "テスト", reading: "てすと", pt: "teste", category: "Estudo/Trabalho", rank: 363, core: false, hasKanji: false },
+      { jp: "質問", reading: "しつもん", pt: "pergunta", category: "Estudo/Trabalho", rank: 364, core: true, hasKanji: true },
+      { jp: "問題", reading: "もんだい", pt: "problema / questão", category: "Estudo/Trabalho", rank: 365, core: true, hasKanji: true },
+      { jp: "答え", reading: "こたえ", pt: "resposta", category: "Estudo/Trabalho", rank: 366, core: false, hasKanji: true },
+      { jp: "調べる", reading: "しらべる", pt: "pesquisar / verificar", category: "Estudo/Trabalho", rank: 367, core: true, hasKanji: true },
+      { jp: "探す", reading: "さがす", pt: "procurar", category: "Verbo", rank: 368, core: true, hasKanji: true },
+      { jp: "見つける", reading: "みつける", pt: "encontrar", category: "Verbo", rank: 369, core: true, hasKanji: true },
+      { jp: "参加", reading: "さんか", pt: "participação", category: "Estudo/Trabalho", rank: 370, core: false, hasKanji: true },
+      { jp: "経験", reading: "けいけん", pt: "experiência", category: "Vida/Frequente", rank: 371, core: false, hasKanji: true },
+      { jp: "失敗", reading: "しっぱい", pt: "fracasso / erro", category: "Vida/Frequente", rank: 372, core: true, hasKanji: true },
+      { jp: "成功", reading: "せいこう", pt: "sucesso", category: "Vida/Frequente", rank: 373, core: false, hasKanji: true },
+      { jp: "努力", reading: "どりょく", pt: "esforço", category: "Vida/Frequente", rank: 374, core: false, hasKanji: true },
+      { jp: "集中", reading: "しゅうちゅう", pt: "concentração", category: "Vida/Frequente", rank: 375, core: false, hasKanji: true },
+      { jp: "注意", reading: "ちゅうい", pt: "atenção / cuidado", category: "Vida/Frequente", rank: 376, core: false, hasKanji: true },
+      { jp: "安全", reading: "あんぜん", pt: "segurança", category: "Vida/Frequente", rank: 377, core: false, hasKanji: true },
+      { jp: "危険", reading: "きけん", pt: "perigo", category: "Vida/Frequente", rank: 378, core: false, hasKanji: true },
+      { jp: "情報", reading: "じょうほう", pt: "informação", category: "Mídia/Tecnologia", rank: 379, core: true, hasKanji: true },
+      { jp: "内容", reading: "ないよう", pt: "conteúdo", category: "Mídia/Tecnologia", rank: 380, core: false, hasKanji: true },
+      { jp: "意味", reading: "いみ", pt: "significado", category: "Mídia/Tecnologia", rank: 381, core: true, hasKanji: true },
+      { jp: "方法", reading: "ほうほう", pt: "método", category: "Mídia/Tecnologia", rank: 382, core: false, hasKanji: true },
+      { jp: "結果", reading: "けっか", pt: "resultado", category: "Vida/Frequente", rank: 383, core: false, hasKanji: true },
+      { jp: "予約", reading: "よやく", pt: "reserva", category: "Vida/Frequente", rank: 384, core: true, hasKanji: true },
+      { jp: "電話", reading: "でんわ", pt: "telefone", category: "Mídia/Tecnologia", rank: 385, core: true, hasKanji: true },
+      { jp: "スマホ", reading: "すまほ", pt: "smartphone", category: "Mídia/Tecnologia", rank: 386, core: true, hasKanji: false },
+      { jp: "メッセージ", reading: "めっせーじ", pt: "mensagem", category: "Mídia/Tecnologia", rank: 387, core: true, hasKanji: false },
+      { jp: "メール", reading: "めーる", pt: "e-mail", category: "Mídia/Tecnologia", rank: 388, core: false, hasKanji: false },
+      { jp: "写真", reading: "しゃしん", pt: "foto", category: "Mídia/Tecnologia", rank: 389, core: true, hasKanji: true },
+      { jp: "動画", reading: "どうが", pt: "vídeo", category: "Mídia/Tecnologia", rank: 390, core: true, hasKanji: true },
+      { jp: "音楽", reading: "おんがく", pt: "música", category: "Mídia/Tecnologia", rank: 391, core: true, hasKanji: true },
+      { jp: "歌", reading: "うた", pt: "música / canção", category: "Mídia/Tecnologia", rank: 392, core: false, hasKanji: true },
+      { jp: "映画", reading: "えいが", pt: "filme", category: "Mídia/Tecnologia", rank: 393, core: true, hasKanji: true },
+      { jp: "ドラマ", reading: "どらま", pt: "drama / série", category: "Mídia/Tecnologia", rank: 394, core: false, hasKanji: false },
+      { jp: "アニメ", reading: "あにめ", pt: "anime", category: "Mídia/Tecnologia", rank: 395, core: true, hasKanji: false },
+      { jp: "ゲーム", reading: "げーむ", pt: "jogo", category: "Mídia/Tecnologia", rank: 396, core: true, hasKanji: false },
+      { jp: "本", reading: "ほん", pt: "livro", category: "Mídia/Tecnologia", rank: 397, core: true, hasKanji: true },
+      { jp: "漫画", reading: "まんが", pt: "mangá", category: "Mídia/Tecnologia", rank: 398, core: false, hasKanji: true },
+      { jp: "ニュース", reading: "にゅーす", pt: "notícia", category: "Mídia/Tecnologia", rank: 399, core: true, hasKanji: false },
+      { jp: "画面", reading: "がめん", pt: "tela", category: "Mídia/Tecnologia", rank: 400, core: false, hasKanji: true },
+      { jp: "ボタン", reading: "ぼたん", pt: "botão", category: "Mídia/Tecnologia", rank: 401, core: false, hasKanji: false },
+      { jp: "アプリ", reading: "あぷり", pt: "aplicativo", category: "Mídia/Tecnologia", rank: 402, core: true, hasKanji: false },
+      { jp: "サイト", reading: "さいと", pt: "site", category: "Mídia/Tecnologia", rank: 403, core: true, hasKanji: false },
+      { jp: "ページ", reading: "ぺーじ", pt: "página", category: "Mídia/Tecnologia", rank: 404, core: false, hasKanji: false },
+      { jp: "アカウント", reading: "あかうんと", pt: "conta", category: "Mídia/Tecnologia", rank: 405, core: false, hasKanji: false },
+      { jp: "パスワード", reading: "ぱすわーど", pt: "senha", category: "Mídia/Tecnologia", rank: 406, core: false, hasKanji: false },
+      { jp: "名前", reading: "なまえ", pt: "nome", category: "Mídia/Tecnologia", rank: 407, core: true, hasKanji: true },
+      { jp: "文字", reading: "もじ", pt: "caractere / letra", category: "Mídia/Tecnologia", rank: 408, core: false, hasKanji: true },
+      { jp: "漢字", reading: "かんじ", pt: "kanji", category: "Mídia/Tecnologia", rank: 409, core: false, hasKanji: true },
+      { jp: "ひらがな", reading: "ひらがな", pt: "hiragana", category: "Mídia/Tecnologia", rank: 410, core: false, hasKanji: false },
+      { jp: "カタカナ", reading: "かたかな", pt: "katakana", category: "Mídia/Tecnologia", rank: 411, core: false, hasKanji: false },
+      { jp: "翻訳", reading: "ほんやく", pt: "tradução", category: "Mídia/Tecnologia", rank: 412, core: false, hasKanji: true },
+      { jp: "発音", reading: "はつおん", pt: "pronúncia", category: "Mídia/Tecnologia", rank: 413, core: false, hasKanji: true },
+      { jp: "会話", reading: "かいわ", pt: "conversa", category: "Mídia/Tecnologia", rank: 414, core: true, hasKanji: true },
+      { jp: "文", reading: "ぶん", pt: "frase / texto", category: "Mídia/Tecnologia", rank: 415, core: false, hasKanji: true },
+      { jp: "単語", reading: "たんご", pt: "palavra", category: "Mídia/Tecnologia", rank: 416, core: false, hasKanji: true },
+      { jp: "表現", reading: "ひょうげん", pt: "expressão", category: "Mídia/Tecnologia", rank: 417, core: false, hasKanji: true },
+      { jp: "保存", reading: "ほぞん", pt: "salvar", category: "Mídia/Tecnologia", rank: 418, core: false, hasKanji: true },
+      { jp: "削除", reading: "さくじょ", pt: "apagar", category: "Mídia/Tecnologia", rank: 419, core: false, hasKanji: true },
+      { jp: "追加", reading: "ついか", pt: "adicionar", category: "Mídia/Tecnologia", rank: 420, core: false, hasKanji: true },
+      { jp: "変更", reading: "へんこう", pt: "alteração", category: "Mídia/Tecnologia", rank: 421, core: false, hasKanji: true },
+      { jp: "更新", reading: "こうしん", pt: "atualização", category: "Mídia/Tecnologia", rank: 422, core: false, hasKanji: true },
+      { jp: "検索", reading: "けんさく", pt: "pesquisa", category: "Mídia/Tecnologia", rank: 423, core: true, hasKanji: true },
+      { jp: "共有", reading: "きょうゆう", pt: "compartilhar", category: "Mídia/Tecnologia", rank: 424, core: false, hasKanji: true },
+      { jp: "通知", reading: "つうち", pt: "notificação", category: "Mídia/Tecnologia", rank: 425, core: false, hasKanji: true },
+      { jp: "設定", reading: "せってい", pt: "configuração", category: "Mídia/Tecnologia", rank: 426, core: true, hasKanji: true },
+      { jp: "天気", reading: "てんき", pt: "tempo / clima", category: "Natureza/Clima", rank: 427, core: true, hasKanji: true },
+      { jp: "晴れ", reading: "はれ", pt: "sol", category: "Natureza/Clima", rank: 428, core: true, hasKanji: true },
+      { jp: "曇り", reading: "くもり", pt: "nublado", category: "Natureza/Clima", rank: 429, core: true, hasKanji: true },
+      { jp: "雨", reading: "あめ", pt: "chuva", category: "Natureza/Clima", rank: 430, core: true, hasKanji: true },
+      { jp: "雪", reading: "ゆき", pt: "neve", category: "Natureza/Clima", rank: 431, core: false, hasKanji: true },
+      { jp: "風", reading: "かぜ", pt: "vento", category: "Natureza/Clima", rank: 432, core: false, hasKanji: true },
+      { jp: "空", reading: "そら", pt: "céu", category: "Natureza/Clima", rank: 433, core: false, hasKanji: true },
+      { jp: "海", reading: "うみ", pt: "mar", category: "Natureza/Clima", rank: 434, core: false, hasKanji: true },
+      { jp: "山", reading: "やま", pt: "montanha", category: "Natureza/Clima", rank: 435, core: false, hasKanji: true },
+      { jp: "花", reading: "はな", pt: "flor", category: "Natureza/Clima", rank: 436, core: false, hasKanji: true },
+      { jp: "木", reading: "き", pt: "árvore", category: "Natureza/Clima", rank: 437, core: false, hasKanji: true },
+      { jp: "色", reading: "いろ", pt: "cor", category: "Natureza/Clima", rank: 438, core: false, hasKanji: true },
+      { jp: "赤", reading: "あか", pt: "vermelho", category: "Natureza/Clima", rank: 439, core: false, hasKanji: true },
+      { jp: "青", reading: "あお", pt: "azul", category: "Natureza/Clima", rank: 440, core: false, hasKanji: true },
+      { jp: "白", reading: "しろ", pt: "branco", category: "Natureza/Clima", rank: 441, core: false, hasKanji: true },
+      { jp: "黒", reading: "くろ", pt: "preto", category: "Natureza/Clima", rank: 442, core: false, hasKanji: true },
+      { jp: "気持ち", reading: "きもち", pt: "sentimento / sensação", category: "Vida/Frequente", rank: 443, core: true, hasKanji: true },
+      { jp: "気", reading: "き", pt: "energia / espírito", category: "Vida/Frequente", rank: 444, core: true, hasKanji: true },
+      { jp: "感じ", reading: "かんじ", pt: "sensação / impressão", category: "Vida/Frequente", rank: 445, core: true, hasKanji: true },
+      { jp: "感じる", reading: "かんじる", pt: "sentir", category: "Vida/Frequente", rank: 446, core: true, hasKanji: true },
+      { jp: "考え", reading: "かんがえ", pt: "ideia", category: "Vida/Frequente", rank: 447, core: false, hasKanji: true },
+      { jp: "意見", reading: "いけん", pt: "opinião", category: "Vida/Frequente", rank: 448, core: false, hasKanji: true },
+      { jp: "夢", reading: "ゆめ", pt: "sonho", category: "Vida/Frequente", rank: 449, core: false, hasKanji: true },
+      { jp: "目的", reading: "もくてき", pt: "objetivo", category: "Vida/Frequente", rank: 450, core: false, hasKanji: true },
+      { jp: "目標", reading: "もくひょう", pt: "meta", category: "Vida/Frequente", rank: 451, core: false, hasKanji: true },
+      { jp: "計画", reading: "けいかく", pt: "plano", category: "Vida/Frequente", rank: 452, core: false, hasKanji: true },
+      { jp: "可能性", reading: "かのうせい", pt: "possibilidade", category: "Vida/Frequente", rank: 453, core: false, hasKanji: true },
+      { jp: "機会", reading: "きかい", pt: "oportunidade", category: "Vida/Frequente", rank: 454, core: false, hasKanji: true },
+      { jp: "原因", reading: "げんいん", pt: "causa", category: "Vida/Frequente", rank: 455, core: false, hasKanji: true },
+      { jp: "変化", reading: "へんか", pt: "mudança", category: "Vida/Frequente", rank: 456, core: false, hasKanji: true },
+      { jp: "成長", reading: "せいちょう", pt: "crescimento", category: "Vida/Frequente", rank: 457, core: false, hasKanji: true },
+      { jp: "生活", reading: "せいかつ", pt: "vida cotidiana", category: "Vida/Frequente", rank: 458, core: true, hasKanji: true },
+      { jp: "習慣", reading: "しゅうかん", pt: "hábito", category: "Vida/Frequente", rank: 459, core: false, hasKanji: true },
+      { jp: "趣味", reading: "しゅみ", pt: "hobby", category: "Vida/Frequente", rank: 460, core: false, hasKanji: true },
+      { jp: "遊び", reading: "あそび", pt: "lazer / brincadeira", category: "Vida/Frequente", rank: 461, core: false, hasKanji: true },
+      { jp: "旅行", reading: "りょこう", pt: "viagem", category: "Vida/Frequente", rank: 462, core: false, hasKanji: true },
+      { jp: "思い出", reading: "おもいで", pt: "lembrança", category: "Vida/Frequente", rank: 463, core: false, hasKanji: true },
+      { jp: "人気", reading: "にんき", pt: "popularidade", category: "Vida/Frequente", rank: 464, core: false, hasKanji: true },
+      { jp: "調子", reading: "ちょうし", pt: "condição / ritmo", category: "Vida/Frequente", rank: 465, core: true, hasKanji: true },
+      { jp: "雰囲気", reading: "ふんいき", pt: "clima / atmosfera", category: "Vida/Frequente", rank: 466, core: false, hasKanji: true },
+      { jp: "価値", reading: "かち", pt: "valor", category: "Vida/Frequente", rank: 467, core: false, hasKanji: true },
+      { jp: "値段", reading: "ねだん", pt: "preço", category: "Vida/Frequente", rank: 468, core: true, hasKanji: true },
+      { jp: "料金", reading: "りょうきん", pt: "tarifa / preço", category: "Vida/Frequente", rank: 469, core: false, hasKanji: true },
+      { jp: "お金", reading: "おかね", pt: "dinheiro", category: "Vida/Frequente", rank: 470, core: true, hasKanji: true },
+      { jp: "無料", reading: "むりょう", pt: "grátis", category: "Vida/Frequente", rank: 471, core: false, hasKanji: true },
+      { jp: "有料", reading: "ゆうりょう", pt: "pago", category: "Vida/Frequente", rank: 472, core: false, hasKanji: true },
+      { jp: "楽しむ", reading: "たのしむ", pt: "aproveitar / curtir", category: "Vida/Frequente", rank: 473, core: false, hasKanji: true },
+      { jp: "笑う", reading: "わらう", pt: "rir", category: "Vida/Frequente", rank: 474, core: true, hasKanji: true },
+      { jp: "泣く", reading: "なく", pt: "chorar", category: "Vida/Frequente", rank: 475, core: true, hasKanji: true },
+      { jp: "怒る", reading: "おこる", pt: "ficar bravo", category: "Vida/Frequente", rank: 476, core: true, hasKanji: true },
+      { jp: "喜ぶ", reading: "よろこぶ", pt: "se alegrar", category: "Vida/Frequente", rank: 477, core: false, hasKanji: true },
+      { jp: "戻る", reading: "もどる", pt: "voltar", category: "Verbo", rank: 478, core: true, hasKanji: true },
+      { jp: "上がる", reading: "あがる", pt: "subir", category: "Verbo", rank: 479, core: false, hasKanji: true },
+      { jp: "下がる", reading: "さがる", pt: "descer", category: "Verbo", rank: 480, core: false, hasKanji: true },
+      { jp: "始まる", reading: "はじまる", pt: "começar", category: "Verbo", rank: 481, core: true, hasKanji: true },
+      { jp: "見える", reading: "みえる", pt: "ser visível", category: "Verbo", rank: 482, core: false, hasKanji: true },
+      { jp: "聞こえる", reading: "きこえる", pt: "ser audível", category: "Verbo", rank: 483, core: false, hasKanji: true },
+      { jp: "伝える", reading: "つたえる", pt: "contar / transmitir", category: "Verbo", rank: 484, core: false, hasKanji: true },
+      { jp: "慣れる", reading: "なれる", pt: "acostumar-se", category: "Verbo", rank: 485, core: false, hasKanji: true },
+      { jp: "残る", reading: "のこる", pt: "restar", category: "Verbo", rank: 486, core: false, hasKanji: true },
+      { jp: "決まる", reading: "きまる", pt: "ser decidido", category: "Verbo", rank: 487, core: false, hasKanji: true },
+      { jp: "似る", reading: "にる", pt: "parecer-se", category: "Verbo", rank: 488, core: false, hasKanji: true },
+      { jp: "足りる", reading: "たりる", pt: "ser suficiente", category: "Verbo", rank: 489, core: false, hasKanji: true },
+      { jp: "守る", reading: "まもる", pt: "proteger / cumprir", category: "Verbo", rank: 490, core: false, hasKanji: true },
+      { jp: "間違える", reading: "まちがえる", pt: "errar", category: "Verbo", rank: 491, core: true, hasKanji: true },
+      { jp: "まあ", reading: "まあ", pt: "bem / enfim", category: "Básico", rank: 492, core: true, hasKanji: false },
+      { jp: "ほら", reading: "ほら", pt: "olha / tá vendo", category: "Básico", rank: 493, core: true, hasKanji: false },
+      { jp: "そう", reading: "そう", pt: "assim / isso mesmo", category: "Básico", rank: 494, core: true, hasKanji: false },
+      { jp: "こう", reading: "こう", pt: "assim (deste jeito)", category: "Básico", rank: 495, core: true, hasKanji: false },
+      { jp: "ああ", reading: "ああ", pt: "assim (daquele jeito)", category: "Básico", rank: 496, core: false, hasKanji: false },
+      { jp: "別に", reading: "べつに", pt: "não particularmente", category: "Básico", rank: 497, core: true, hasKanji: true }
+    ];
+
+    const structures = [
+      { pattern: "〜てる", meaning: "ação em andamento / estado atual", use: "Forma falada de 〜ている. É a estrutura mais vital da fala cotidiana.", example: "今、何してる？", translation: "O que você está fazendo agora?", core: true },
+      { pattern: "〜てた", meaning: "estado / ação passada contínua", use: "Forma falada de 〜ていた. Muito usada para lembrar, comentar e narrar.", example: "さっき寝てた。", translation: "Eu estava dormindo agora há pouco.", core: true },
+      { pattern: "〜たい", meaning: "querer fazer", use: "Gruda na base do verbo para falar desejo pessoal.", example: "早く帰りたい。", translation: "Quero voltar logo para casa.", core: true },
+      { pattern: "〜たくない", meaning: "não querer fazer", use: "Negativa de 〜たい, super comum na fala.", example: "今日は外に出たくない。", translation: "Hoje não quero sair.", core: true },
+      { pattern: "〜と思う", meaning: "acho que / penso que", use: "Usado para opinião direta e neutra.", example: "それはいいと思う。", translation: "Acho que isso é bom.", core: true },
+      { pattern: "〜って思う", meaning: "acho que", use: "Versão mais falada de 〜と思う.", example: "無理だって思う。", translation: "Acho que é impossível.", core: true },
+      { pattern: "〜んだ", meaning: "é que / acontece que", use: "Explica, dá contexto, suaviza ou reforça.", example: "今日は休みなんだ。", translation: "É que hoje é folga.", core: true },
+      { pattern: "〜んだけど", meaning: "é que... / mas...", use: "Abre assunto, pede reação, introduz problema.", example: "ちょっと相談があるんだけど。", translation: "Queria falar uma coisa contigo.", core: true },
+      { pattern: "〜から", meaning: "porque", use: "Motivo direto, muito falado.", example: "今日は忙しいから、無理。", translation: "Hoje estou ocupado, então não dá.", core: true },
+      { pattern: "〜けど", meaning: "mas / só que", use: "Conecta ideia e deixa a frase mais natural.", example: "行きたいけど、お金がない。", translation: "Quero ir, mas não tenho dinheiro.", core: true },
+      { pattern: "〜し", meaning: "e além disso / porque também", use: "Empilha motivos de forma natural.", example: "安いし、うまいし、ここ好き。", translation: "É barato, gostoso e eu gosto daqui.", core: true },
+      { pattern: "〜てもいい", meaning: "pode / tudo bem fazer", use: "Pedir ou dar permissão.", example: "ここに座ってもいい？", translation: "Posso sentar aqui?", core: true },
+      { pattern: "〜なくてもいい", meaning: "não precisa fazer", use: "Muito útil no dia a dia.", example: "今日は来なくてもいいよ。", translation: "Hoje você não precisa vir.", core: true },
+      { pattern: "〜なきゃ", meaning: "tenho que", use: "Forma bem falada de 〜なければならない.", example: "もう寝なきゃ。", translation: "Já tenho que dormir.", core: true },
+      { pattern: "〜ないと", meaning: "tenho que / se não", use: "Outra forma falada de obrigação.", example: "早く行かないと。", translation: "Tenho que ir logo.", core: true },
+      { pattern: "〜ちゃう", meaning: "acabar fazendo / fazer sem querer", use: "Contração falada de 〜てしまう.", example: "また忘れちゃった。", translation: "Acabei esquecendo de novo.", core: true },
+      { pattern: "〜とく", meaning: "fazer antes / deixar pronto", use: "Contração falada de 〜ておく.", example: "先に言っとくね。", translation: "Vou te falar antes, tá?", core: true },
+      { pattern: "〜てみる", meaning: "tentar fazer", use: "Serve para tentativa / teste.", example: "一回食べてみる。", translation: "Vou provar uma vez.", core: true },
+      { pattern: "〜てくれる", meaning: "fazer para mim", use: "Quando alguém faz algo por você.", example: "手伝ってくれてありがとう。", translation: "Obrigado por me ajudar.", core: true },
+      { pattern: "〜てもらう", meaning: "receber favor", use: "Quando você recebe a ação de alguém.", example: "友達に教えてもらった。", translation: "Meu amigo me ensinou.", core: true },
+      { pattern: "〜てあげる", meaning: "fazer para alguém", use: "Quando você faz algo por outra pessoa.", example: "あとで送ってあげる。", translation: "Depois eu mando para você.", core: false },
+      { pattern: "〜てほしい", meaning: "quero que faça", use: "Pedido / desejo em relação ao outro.", example: "ちゃんと見てほしい。", translation: "Quero que você veja direito.", core: true },
+      { pattern: "〜たことがある", meaning: "já fez alguma vez", use: "Forma clássica de experiência.", example: "日本に行ったことがある。", translation: "Já fui ao Japão.", core: true },
+      { pattern: "〜ようになる", meaning: "passar a conseguir / começar a", use: "Mudança de hábito ou capacidade.", example: "日本語が少し話せるようになった。", translation: "Passei a conseguir falar um pouco de japonês.", core: false },
+      { pattern: "〜ようにする", meaning: "procurar fazer / tentar manter", use: "Hábito intencional.", example: "毎日読むようにしてる。", translation: "Tento ler todos os dias.", core: false },
+      { pattern: "〜たら", meaning: "se / quando", use: "Condição muito natural na fala.", example: "終わったら連絡して。", translation: "Quando terminar, me avisa.", core: true },
+      { pattern: "〜なら", meaning: "se for / quanto a", use: "Usado para tema ou condição baseada no contexto.", example: "行かないなら、先に言って。", translation: "Se não for, fala antes.", core: true },
+      { pattern: "〜かも", meaning: "talvez", use: "Hedge muito comum.", example: "明日は雨かも。", translation: "Talvez amanhã chova.", core: true },
+      { pattern: "〜かな", meaning: "será? / acho que", use: "Fala consigo mesmo ou dúvida leve.", example: "もう帰ったかな。", translation: "Será que ele já voltou?", core: true },
+      { pattern: "〜みたい", meaning: "parece / tipo", use: "Super comum para comparação e impressão.", example: "彼、先生みたい。", translation: "Ele parece professor.", core: true },
+      { pattern: "〜っぽい", meaning: "com cara de / meio", use: "Nuance casual e falada.", example: "子供っぽいね。", translation: "Tá meio infantil.", core: false },
+      { pattern: "〜そう", meaning: "parece que vai / parece", use: "Impressão visual imediata.", example: "おいしそう。", translation: "Parece gostoso.", core: true },
+      { pattern: "〜らしい", meaning: "parece que / típico de", use: "Rumor ou característica típica.", example: "彼は来ないらしい。", translation: "Parece que ele não vem.", core: false },
+      { pattern: "〜すぎる", meaning: "demais", use: "Excesso, muito usado.", example: "高すぎる。", translation: "Está caro demais.", core: true },
+      { pattern: "〜やすい", meaning: "fácil de", use: "Avalia facilidade.", example: "この靴は歩きやすい。", translation: "Esse sapato é fácil de andar.", core: false },
+      { pattern: "〜にくい", meaning: "difícil de", use: "Oposto de やすい.", example: "この字、読みにくい。", translation: "Esse caractere é difícil de ler.", core: false },
+      { pattern: "〜だけ", meaning: "só / apenas", use: "Limitação neutra.", example: "一つだけ聞きたい。", translation: "Só quero perguntar uma coisa.", core: true },
+      { pattern: "〜しか〜ない", meaning: "só / nada além de", use: "Limitação forte com negativa.", example: "千円しかない。", translation: "Só tenho mil ienes.", core: true },
+      { pattern: "〜でも", meaning: "até / mesmo / ou então", use: "Super flexível na fala.", example: "お茶でも飲む？", translation: "Quer tomar um chá ou algo assim?", core: true },
+      { pattern: "〜とか", meaning: "tipo / coisas como", use: "Lista incompleta, fala natural.", example: "週末は映画とか見る。", translation: "No fim de semana vejo filme e coisas assim.", core: true },
+      { pattern: "〜って", meaning: "que / sobre / chamado", use: "Marcador falado mega frequente.", example: "田中さんって知ってる？", translation: "Você conhece o Tanaka?", core: true },
+      { pattern: "〜っていう", meaning: "chamado / que se diz", use: "Explica nome ou conceito.", example: "推しっていう言葉、知ってる？", translation: "Você conhece a palavra oshi?", core: false },
+      { pattern: "〜じゃん", meaning: "ué / tá na cara / né", use: "Bem coloquial, especialmente no leste do Japão.", example: "いいじゃん、それ。", translation: "Isso tá legal, pô.", core: true },
+      { pattern: "〜でしょ", meaning: "né / não é?", use: "Busca concordância.", example: "これ、難しいでしょ。", translation: "Isso é difícil, né?", core: true },
+      { pattern: "〜じゃない", meaning: "não é / não", use: "Negação ou confirmação informal.", example: "違うじゃない。", translation: "Não é isso.", core: true },
+      { pattern: "〜わけじゃない", meaning: "não é que...", use: "Negação parcial, nuance importante.", example: "嫌いなわけじゃない。", translation: "Não é que eu não goste.", core: false },
+      { pattern: "〜まま", meaning: "do jeito que está", use: "Estado mantido.", example: "そのままでいいよ。", translation: "Pode deixar assim mesmo.", core: false },
+      { pattern: "〜ながら", meaning: "fazendo enquanto", use: "Muito útil para rotina.", example: "音楽を聞きながら勉強する。", translation: "Estudo ouvindo música.", core: true },
+      { pattern: "〜ばかり", meaning: "só fica / acabou de", use: "Na fala aparece muito para exagero e repetição.", example: "彼は文句ばかり言う。", translation: "Ele só reclama.", core: false },
+      { pattern: "〜ところ", meaning: "bem na hora / prestes a", use: "Momento exato da ação.", example: "今から出るところ。", translation: "Estou bem saindo agora.", core: false },
+      { pattern: "〜中", meaning: "no meio de", use: "Estado em progresso.", example: "今、仕事中。", translation: "Estou trabalhando agora.", core: true },
+      { pattern: "〜てない", meaning: "não está / não fez", use: "Negativa falada de 〜ていない.", example: "まだ食べてない。", translation: "Ainda não comi.", core: true },
+      { pattern: "〜なくて", meaning: "e não / por não", use: "Liga motivo e negativa.", example: "時間がなくて行けない。", translation: "Não consigo ir porque não tenho tempo.", core: true },
+      { pattern: "〜ように", meaning: "para que / de modo que", use: "Objetivo ou resultado.", example: "忘れないようにメモした。", translation: "Anotei para não esquecer.", core: false },
+      { pattern: "〜ことにする", meaning: "decidir fazer", use: "Decisão pessoal.", example: "今日は休むことにする。", translation: "Decidi descansar hoje.", core: false },
+      { pattern: "〜ことになる", meaning: "ficar decidido / acabar ficando", use: "Decisão externa ou resultado.", example: "来週行くことになった。", translation: "Ficou decidido que vamos semana que vem.", core: false },
+      { pattern: "〜しかない", meaning: "não tem outro jeito", use: "Muito natural na fala.", example: "やるしかない。", translation: "Não tem outro jeito, tem que fazer.", core: true },
+      { pattern: "〜っけ", meaning: "como era mesmo?", use: "Para lembrar algo informalmente.", example: "あれ、何時だっけ？", translation: "Ué, que horas era mesmo?", core: false }
+    ];
+
+    const els = {
+      q: document.getElementById('q'),
+      mode: document.getElementById('mode'),
+      categoryFilter: document.getElementById('categoryFilter'),
+      sortBy: document.getElementById('sortBy'),
+      onlyCore: document.getElementById('onlyCore'),
+      onlyKanji: document.getElementById('onlyKanji'),
+      searchStructures: document.getElementById('searchStructures'),
+      clearBtn: document.getElementById('clearBtn'),
+      showCoreBtn: document.getElementById('showCoreBtn'),
+      chips: document.getElementById('chips'),
+      vocabGrid: document.getElementById('vocabGrid'),
+      vocabEmpty: document.getElementById('vocabEmpty'),
+      structureList: document.getElementById('structureList'),
+      structureEmpty: document.getElementById('structureEmpty'),
+      vocabCount: document.getElementById('vocabCount'),
+      structureCount: document.getElementById('structureCount'),
+      activeCategory: document.getElementById('activeCategory'),
+      activeSort: document.getElementById('activeSort'),
+      statVocab: document.getElementById('statVocab'),
+      statStructures: document.getElementById('statStructures'),
+      statResults: document.getElementById('statResults'),
+      statCategories: document.getElementById('statCategories'),
+      categoryGrid: document.getElementById('categoryGrid'),
+      studyStructures: document.getElementById('studyStructures'),
+      studyVocab: document.getElementById('studyVocab')
+    };
+
+    const tabs = Array.from(document.querySelectorAll('.tab'));
+    const panels = {
+      vocab: document.getElementById('panel-vocab'),
+      structures: document.getElementById('panel-structures'),
+      categories: document.getElementById('panel-categories'),
+      study: document.getElementById('panel-study')
+    };
+
+    const categories = ['Todas', ...Array.from(new Set(vocab.map(v => v.category))).sort((a,b) => a.localeCompare(b, 'pt-BR'))];
+
+    function normalize(text) {
+      return String(text || '').toLowerCase().normalize('NFKC');
+    }
+
+    function splitTerms(text) {
+      return normalize(text).split(/\s+/).filter(Boolean);
+    }
+
+    function matchByMode(haystack, q, mode) {
+      const h = normalize(haystack);
+      const query = normalize(q);
+      const terms = splitTerms(query);
+      if (!query) return true;
+      if (mode === 'exact') return h === query;
+      if (mode === 'starts') return h.startsWith(query);
+      if (mode === 'all') return terms.every(t => h.includes(t));
+      return terms.some(t => h.includes(t));
+    }
+
+    function getVocabSearchBlob(item) {
+      return [item.jp, item.reading, item.pt, item.category, item.rank].join(' | ');
+    }
+
+    function getStructureSearchBlob(item) {
+      return [item.pattern, item.meaning, item.use, item.example, item.translation].join(' | ');
+    }
+
+    function renderCategoryFilter() {
+      els.categoryFilter.innerHTML = categories.map(cat => `<option value="${cat}">${cat}</option>`).join('');
+      els.statCategories.textContent = categories.length - 1;
+    }
+
+    function renderChips() {
+      els.chips.innerHTML = categories.map(cat => `
+        <button class="chip ${cat === 'Todas' ? 'active' : ''}" data-category="${cat}">${cat}</button>
+      `).join('');
+
+      els.chips.querySelectorAll('.chip').forEach(btn => {
+        btn.addEventListener('click', () => {
+          els.categoryFilter.value = btn.dataset.category;
+          refresh();
+        });
+      });
+    }
+
+    function getFilteredVocab() {
+      const q = els.q.value.trim();
+      const mode = els.mode.value;
+      const cat = els.categoryFilter.value;
+      const sortBy = els.sortBy.value;
+      const onlyCore = els.onlyCore.checked;
+      const onlyKanji = els.onlyKanji.checked;
+
+      let list = vocab.filter(item => {
+        const passQ = matchByMode(getVocabSearchBlob(item), q, mode);
+        const passCat = cat === 'Todas' || item.category === cat;
+        const passCore = !onlyCore || item.core;
+        const passKanji = !onlyKanji || item.hasKanji;
+        return passQ && passCat && passCore && passKanji;
+      });
+
+      list.sort((a, b) => {
+        if (sortBy === 'jp') return a.jp.localeCompare(b.jp, 'ja');
+        if (sortBy === 'pt') return a.pt.localeCompare(b.pt, 'pt-BR');
+        if (sortBy === 'category') return a.category.localeCompare(b.category, 'pt-BR') || a.rank - b.rank;
+        return a.rank - b.rank;
+      });
+
+      return list;
+    }
+
+    function getFilteredStructures() {
+      const q = els.q.value.trim();
+      const mode = els.mode.value;
+      const onlyCore = els.onlyCore.checked;
+      const searchStructures = els.searchStructures.checked;
+
+      let list = structures.filter(item => {
+        const passQ = !searchStructures || !q ? true : matchByMode(getStructureSearchBlob(item), q, mode);
+        const passCore = !onlyCore || item.core;
+        return passQ && passCore;
+      });
+
+      return list;
+    }
+
+    function renderVocab() {
+      const list = getFilteredVocab();
+      els.vocabCount.textContent = list.length;
+      els.activeCategory.textContent = els.categoryFilter.value;
+      els.activeSort.textContent = els.sortBy.options[els.sortBy.selectedIndex].text;
+      els.vocabEmpty.hidden = list.length > 0;
+
+      els.vocabGrid.innerHTML = list.map(item => `
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <div class="jp">${item.jp}</div>
+              <div class="reading">${item.reading}</div>
+            </div>
+            <div class="tag rank">#${item.rank}</div>
+          </div>
+          <div class="pt">${item.pt}</div>
+          <div class="meta">
+            <span class="tag">${item.category}</span>
+            ${item.core ? '<span class="tag common">núcleo vital</span>' : ''}
+            ${item.hasKanji ? '<span class="tag">com kanji</span>' : '<span class="tag">kana / katakana</span>'}
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function renderStructures() {
+      const list = getFilteredStructures();
+      els.structureCount.textContent = list.length;
+      els.structureEmpty.hidden = list.length > 0;
+
+      els.structureList.innerHTML = list.map(item => `
+        <article class="structure">
+          <h3>${item.pattern}</h3>
+          <div class="meaning">${item.meaning}</div>
+          <div class="box">
+            <h4>Como usar</h4>
+            <p>${item.use}</p>
+          </div>
+          <div class="box">
+            <h4>Exemplo</h4>
+            <div class="example-jp">${item.example}</div>
+            <div>${item.translation}</div>
+          </div>
+          <div class="meta">
+            ${item.core ? '<span class="tag common">núcleo vital</span>' : '<span class="tag">útil</span>'}
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function renderCategoryOverview() {
+      const grouped = categories
+        .filter(c => c !== 'Todas')
+        .map(cat => {
+          const items = vocab.filter(v => v.category === cat).sort((a,b) => a.rank - b.rank);
+          return { cat, count: items.length, top: items.slice(0, 5) };
+        })
+        .sort((a,b) => b.count - a.count);
+
+      els.categoryGrid.innerHTML = grouped.map(group => `
+        <div class="cat-card">
+          <div class="name">${group.cat}</div>
+          <div class="count">${group.count} itens</div>
+          <div class="mini-list">
+            ${group.top.map(item => `
+              <div class="mini-item">
+                <span>${item.jp} <span style="color: var(--muted);">${item.reading}</span></span>
+                <span style="color: var(--muted);">${item.pt}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderStudyPanel() {
+      const coreStructures = structures.filter(s => s.core).slice(0, 18);
+      const coreVocab = vocab.filter(v => v.core).slice(0, 30);
+
+      els.studyStructures.innerHTML = coreStructures.map(s => `
+        <div class="mini-item">
+          <span><strong>${s.pattern}</strong> — ${s.meaning}</span>
+          <span style="color: var(--muted);">${s.example}</span>
+        </div>
+      `).join('');
+
+      els.studyVocab.innerHTML = coreVocab.map(v => `
+        <div class="mini-item">
+          <span><strong>${v.jp}</strong> <span style="color: var(--muted);">${v.reading}</span></span>
+          <span style="color: var(--muted);">${v.pt}</span>
+        </div>
+      `).join('');
+    }
+
+    function refreshStats() {
+      const visibleVocab = getFilteredVocab().length;
+      const visibleStructures = getFilteredStructures().length;
+      els.statVocab.textContent = vocab.length;
+      els.statStructures.textContent = structures.length;
+      els.statResults.textContent = visibleVocab + visibleStructures;
+      els.chips.querySelectorAll('.chip').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.category === els.categoryFilter.value);
+      });
+    }
+
+    function refresh() {
+      renderVocab();
+      renderStructures();
+      renderCategoryOverview();
+      renderStudyPanel();
+      refreshStats();
+    }
+
+    function activateTab(name) {
+      tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.tab === name));
+      Object.keys(panels).forEach(key => {
+        panels[key].hidden = key !== name;
+      });
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => activateTab(tab.dataset.tab));
+    });
+
+    [els.q, els.mode, els.categoryFilter, els.sortBy, els.onlyCore, els.onlyKanji, els.searchStructures].forEach(el => {
+      el.addEventListener('input', refresh);
+      el.addEventListener('change', refresh);
+    });
+
+    els.clearBtn.addEventListener('click', () => {
+      els.q.value = '';
+      els.mode.value = 'contains';
+      els.categoryFilter.value = 'Todas';
+      els.sortBy.value = 'rank';
+      els.onlyCore.checked = false;
+      els.onlyKanji.checked = false;
+      els.searchStructures.checked = true;
+      refresh();
+    });
+
+    els.showCoreBtn.addEventListener('click', () => {
+      els.onlyCore.checked = true;
+      els.categoryFilter.value = 'Todas';
+      els.sortBy.value = 'rank';
+      activateTab('study');
+      refresh();
+    });
+
+    renderCategoryFilter();
+    renderChips();
+    refresh();
+    activateTab('vocab');
+  </script>
+</body>
+</html>
